@@ -138,6 +138,37 @@ body {
 .hero__rule { margin-top: 72px; height: 1px; background: rgba(13,35,67,.1); }
 
 /* ── team intro ── */
+.team-intro__cta {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.team-intro__cta-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--navy);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+.team-intro__cta-button:hover {
+  color: var(--gold);
+}
+.team-intro__cta-button span {
+  transition: transform 0.2s ease;
+}
+.team-intro__cta-button:hover span {
+  transform: translateX(4px);
+}
 .team-intro { background: var(--offwhite); padding: 0 48px 96px; max-width: 1440px; margin: 0 auto; }
 .team-intro__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
 .team-intro__photo { height: 480px; overflow: hidden; background: #C8C3B8; }

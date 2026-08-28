@@ -14,7 +14,6 @@ export default function Home() {
       <Justica />
       <QuemAtendemos />
       <Historia />
-      <NossoTime />
       <Testimonials />
       <Contato />
     </>
@@ -72,6 +71,17 @@ function TeamIntro() {
   return (
     <section>
       <div className="team-intro">
+         {/* BOTÃO NOVO */}
+        <div className="team-intro__cta">
+          <button
+            onClick={() => navigate("/quem-somos#equipe")}
+            className="team-intro__cta-button"
+            
+            >
+              CONHEÇA NOSSO TIME
+  <span></span>
+</button>
+        </div>
         <div className="team-intro__grid">
           {TEAM.map((m) => (
             <div
@@ -243,76 +253,6 @@ function Historia() {
               <h3 className="timeline-label">{t.label}</h3>
               <p className="timeline-text area-placeholder">{t.text}</p>
             </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-/* ─── NOSSO TIME (home — cards clean, sem bio) ─── */
-function NossoTime() {
-  const navigate = useNavigate();
-
-  return (
-    <section className="time-sec">
-      <div className="time-sec__inner">
-        <div className="time-sec__header">
-          <div>
-            <span className="time-sec__label">NOSSO TIME</span>
-            <h2 className="time-sec__title">
-              Conhecimento técnico.<br />
-              <em>Relações de confiança.</em>
-            </h2>
-          </div>
-          <button
-            onClick={() => navigate("/quem-somos#equipe")}
-            style={{
-              background: "none",
-              border: "1px solid rgba(245,243,237,.2)",
-              borderRadius: 100,
-              color: "var(--offwhite)",
-              fontFamily: "var(--sans)",
-              fontSize: 11,
-              fontWeight: 500,
-              letterSpacing: ".1em",
-              padding: "10px 20px",
-              cursor: "pointer",
-              transition: "border-color .2s, color .2s",
-              flexShrink: 0,
-              alignSelf: "flex-end",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = "var(--gold)";
-              e.currentTarget.style.color = "var(--gold)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = "rgba(245,243,237,.2)";
-              e.currentTarget.style.color = "var(--offwhite)";
-            }}
-          >
-            CONHEÇA O TIME →
-          </button>
-        </div>
-
-        {/* Compact rows — name, role, arrow only */}
-        {TEAM.map((m) => (
-          <div
-            key={m.name}
-            className="time-home-row"
-            onClick={() => navigate(`/quem-somos#${m.anchor}`)}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => e.key === "Enter" && navigate(`/quem-somos#${m.anchor}`)}
-          >
-            <div className="time-home-row__photo">
-              <img src={m.img} alt={m.name} />
-            </div>
-            <div className="time-home-row__info">
-              <h3 className="time-home-row__name">{m.name}</h3>
-              <span className="time-home-row__role">{m.role.toUpperCase()}</span>
-            </div>
-            <span className="time-home-row__arrow">↗</span>
           </div>
         ))}
       </div>
