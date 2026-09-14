@@ -13,10 +13,10 @@ export default function QuemSomos() {
         img={alexandreImg}
         name="Alexandre Ezechiello"
         role="Sócio & Co-founder"
-        oab="[OAB REAL A INSERIR]"
-        bio="[CONTEÚDO REAL A INSERIR]"
-        formation="[CONTEÚDO REAL A INSERIR]"
-        areas={["[CONTEÚDO REAL A INSERIR]"]}
+        oab="OAB/RJ 143.732"
+        bio="Especialista em Direito do Trabalho e formado em Administração pela UFRJ, possui mais de 20 anos de experiência na advocacia, tendo atuado como Procurador Jurídico de uma das maiores emprsas de energia no Brasil. Desenvolveu sólida trajetória na representação de clientes em demandas trabalhistas e cíveis, com destaque para profissionais da área hospitalar e da saúde, além de atuação consultiva em Direito Previdenciário. É associado ao IARGS e ao IBDP."
+        formation="Direito | Administração (UFRJ) | Especialização em Direito Previdenciário (PUCRS) | Mestrando em Direito da Empresa e dos Negócios (Unisinos)"
+        areas={["Trabalhista, Previdenciário, Cível e Empresarial"]}
         flipped={false}
       />
       <ProfileSection
@@ -25,9 +25,9 @@ export default function QuemSomos() {
         name="Sonia M. M. E. Ezechiello"
         role="Sócia & Founder"
         oab="[OAB REAL A INSERIR]"
-        bio="[CONTEÚDO REAL A INSERIR]"
-        formation="[CONTEÚDO REAL A INSERIR]"
-        areas={["[CONTEÚDO REAL A INSERIR]"]}
+        bio="Fundadora do escritório e sócia-administradora, é formada em Direito, com atuação nas áreas Trabalhista e Cível. Possui experiência na condução de demandas judiciais, atendimento estratégico a clientes e organização administrativa de escritórios de advocacia. Atua na coordenação das atividades jurídicas e administrativas, aliando técnica jurídica, gestão financeira e eficiência na condução do negócio."
+        formation="Direito | Pós-graduação Tax Law (PUCRS)"
+        areas={["Trabalhista, Cível e Tributária"]}
         flipped={true}
       />
       <ProfileSection
@@ -36,9 +36,9 @@ export default function QuemSomos() {
         name="Rafaela M. Ezechiello"
         role="Advogada"
         oab="[OAB REAL A INSERIR]"
-        bio="[CONTEÚDO REAL A INSERIR]"
-        formation="[CONTEÚDO REAL A INSERIR]"
-        areas={["[CONTEÚDO REAL A INSERIR]"]}
+        bio="Formada em Direito pela PUC-RS e pós-graduanda em Processo e Direito do Trabalho, possui experiência em responsabilidade civil e Direito Internacional Privado do Trabalho. Atua na representação de clientes e na consultoria em Direito Trabalhista, além de integrar a gestão estratégica do escritório, contribuindo para a organização administrativa, o planejamento e o desenvolvimento institucional."
+        formation="Direito (PUCRS) | Pós-graduação em Processo e Direito do Trabalho (PUCRS)"
+        areas={["Trabalhista, Cível e Internacional Privado"]}
         flipped={false}
       />
       <ContatoCTA />
@@ -67,15 +67,15 @@ function ApresentacaoSection() {
             <em>confiança.</em>
           </h1>
           <div className="qs-apresentacao__body">
-            <p className="qs-apresentacao__text area-placeholder">[CONTEÚDO REAL A INSERIR]</p>
-            <p className="qs-apresentacao__text area-placeholder" style={{ marginTop: 20 }}>[CONTEÚDO REAL A INSERIR]</p>
+            <p className="qs-apresentacao__text area-placeholder">O Marques Ezechiello Advogados Associados atua com uma advocacia técnica, estratégica e próxima, oferecendo soluções jurídicas construídas a partir da realidade de cada cliente.</p>
+            <p className="qs-apresentacao__text area-placeholder" style={{ marginTop: 20 }}>Com atuação nas áreas Trabalhista, Previdenciária, Cível e Empresarial, o escritório reúne experiência, atendimento personalizado e compromisso com a defesa responsável de pessoas e empresas.</p>
 
             {/* Stats / highlights */}
             <div className="qs-stats">
               {[
-                { val: "[ANO]", label: "DE FUNDAÇÃO" },
-                { val: "[Nº]",  label: "ANOS DE EXPERIÊNCIA" },
-                { val: "[Nº]",  label: "ÁREAS DE ATUAÇÃO" },
+                { val: "2011", label: "DE FUNDAÇÃO" },
+                { val: "15",  label: "ANOS DE ATUAÇÃO" },
+                { val: "4",  label: "ÁREAS DE EXPERIÊNCIA" },
               ].map((s) => (
                 <div key={s.label} className="qs-stat">
                   <span className="qs-stat__val area-placeholder">{s.val}</span>

@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { useNavigate } from "react-router";
 import justicaImg from "@/imports/Justica-cega.jpeg";
 import rafaelaImg from "@/imports/rafaela.png__1_.png";
 import alexandreImg from "@/imports/image__10_.png";
 import soniaImg from "@/imports/image__9_.png";
+import mapaBrasilImg from "@/imports/mapa-brasil.png";
 
 export default function Home() {
   return (
@@ -258,44 +260,158 @@ function QuemAtendemos() {
 
 /* ─── HISTÓRIA ─── */
 const TIMELINE = [
-  { year: "2008", label: "MARCO INSTITUCIONAL",                     text: "[CONTEÚDO REAL A INSERIR]" },
-  { year: "2011", label: "FUNDAÇÃO DO ESCRITÓRIO",                   text: "[CONTEÚDO REAL A INSERIR]" },
-  { year: "2014", label: "CONSOLIDAÇÃO NO CONTENCIOSO TRABALHISTA",  text: "[CONTEÚDO REAL A INSERIR]" },
-  { year: "2018", label: "ESTRUTURAÇÃO SOCIETÁRIA E CRESCIMENTO",    text: "[CONTEÚDO REAL A INSERIR]" },
-  { year: "2020", label: "EXPANSÃO TERRITORIAL",                     text: "[CONTEÚDO REAL A INSERIR]" },
-  { year: "2026", label: "NOVO ESPAÇO EM SÃO PAULO",                 text: "[CONTEÚDO REAL A INSERIR]" },
+  { year: "2008", label: "MARCO INSTITUCIONAL",                     text: "Um dos sócios é aprovado em concurso público e assume o cargo de Procurador Jurídico em empresa estatal, atuando na defesa judicial da companhia. A experiência consolidou base técnica  e visão institucional que passaram a nortear a atuação do escritório." },
+  { year: "2011", label: "FUNDAÇÃO DO ESCRITÓRIO",                   text: "Nasce, no Rio de Janeiro, o escritório com o propósito de oferecer uma advocacia técnica, próxima e resolutiva, voltada à defesa estratégica de empresas e à construção de relações de confiança." },
+  { year: "2014", label: "CONSOLIDAÇÃO NO CONTENCIOSO TRABALHISTA",  text: "Expansão da atuação em demandas trabalhistas de média e alta complexidade, com estruturação de metodologia própria de acompanhamento processual e gestão de risco jurídico." },
+  { year: "2018", label: "ESTRUTURAÇÃO SOCIETÁRIA E CRESCIMENTO",    text: "Ampliação da carteira de clientes e fortalecimento da atuação nas áreas Trabalhista, Cível e Previdenciária, com foco em estratégia processual e segurança jurídica." },
+  { year: "2020", label: "EXPANSÃO TERRITORIAL",                     text: "Ampliação da presença para Porto Alegre, consolidando atendimento regional e fortalecendo a atuação interestadual." },
+  { year: "2026", label: "NOVO ESPAÇO EM SÃO PAULO",                 text: "Inauguração de unidade em São Paulo, expandindo horizontes e reforçando o compromisso com uma advocacia moderna, estruturada e de alcance nacional." },
 ];
 
+const HISTORY_LOCATIONS: Record<string, string> = {
+  "2008": "rio",
+  "2011": "rio",
+  "2014": "rio",
+  "2018": "rio",
+  "2020": "porto-alegre",
+  "2026": "sao-paulo",
+};
+
 function Historia() {
+  const [activeYear, setActiveYear] = useState("2008");
+
   return (
     <section id="historia" className="historia">
       <div className="historia__inner">
+
+        {/* CABEÇALHO */}
         <div className="historia__header">
-          <span className="historia__label">NOSSA HISTÓRIA</span>
+          <span className="historia__label">
+            NOSSA HISTÓRIA
+          </span>
+
           <h2 className="historia__title">
-            Uma trajetória de<br />
+            Uma trajetória de
+            <br />
             <em>compromisso</em> e evolução.
           </h2>
         </div>
-        {TIMELINE.map((t) => (
-          <div key={t.year} className="timeline-row">
-            <div className="timeline-year">{t.year}</div>
-            <div>
-              <h3 className="timeline-label">{t.label}</h3>
-              <p className="timeline-text area-placeholder">{t.text}</p>
+
+
+        {/* MAPA + TIMELINE */}
+        <div className="historia-layout">
+
+          {/* COLUNA ESQUERDA */}
+          <div className="historia-visual">
+            <div className="historia-visual__sticky">
+
+              <div className="historia-map">
+
+                <img
+                  src={mapaBrasilImg}
+                  alt="Mapa do Brasil"
+                  className="historia-map__image"
+                />
+
+                {/* RIO */}
+                <div
+                  className={`historia-map__point historia-map__point--rio ${
+                    HISTORY_LOCATIONS[activeYear] === "rio"
+                      ? "active"
+                      : ""
+                  }`}
+                >
+                  <span className="historia-map__pulse" />
+
+                  <span className="historia-map__city">
+                    Rio de Janeiro
+                  </span>
+                </div>
+
+
+                {/* SÃO PAULO */}
+                <div
+                  className={`historia-map__point historia-map__point--sp ${
+                    HISTORY_LOCATIONS[activeYear] === "sao-paulo"
+                      ? "active"
+                      : ""
+                  }`}
+                >
+                  <span className="historia-map__pulse" />
+
+                  <span className="historia-map__city">
+                    São Paulo
+                  </span>
+                </div>
+
+
+                {/* PORTO ALEGRE */}
+                <div
+                  className={`historia-map__point historia-map__point--poa ${
+                    HISTORY_LOCATIONS[activeYear] === "porto-alegre"
+                      ? "active"
+                      : ""
+                  }`}
+                >
+                  <span className="historia-map__pulse" />
+
+                  <span className="historia-map__city">
+                    Porto Alegre
+                  </span>
+                </div>
+
+              </div>
             </div>
           </div>
-        ))}
+
+
+          {/* COLUNA DIREITA */}
+          <div className="historia-timeline">
+
+            {TIMELINE.map((t) => (
+              <div
+                key={t.year}
+                className={`timeline-row ${
+                  activeYear === t.year
+                    ? "timeline-row--active"
+                    : ""
+                }`}
+                onMouseEnter={() => setActiveYear(t.year)}
+                onFocus={() => setActiveYear(t.year)}
+                onClick={() => setActiveYear(t.year)}
+                tabIndex={0}
+              >
+
+                <div className="timeline-year">
+                  {t.year}
+                </div>
+
+                <div>
+                  <h3 className="timeline-label">
+                    {t.label}
+                  </h3>
+
+                  <p className="timeline-text area-placeholder">
+                    {t.text}
+                  </p>
+                </div>
+
+              </div>
+            ))}
+
+          </div>
+
+        </div>
+
       </div>
     </section>
   );
 }
-
 /* ─── DEPOIMENTOS ─── */
 const TESTIMONIALS = [
-  { text: "[DEPOIMENTO REAL DO GOOGLE]", author: "[NOME REAL]", ctx: "[ÁREA]" },
-  { text: "[DEPOIMENTO REAL DO GOOGLE]", author: "[NOME REAL]", ctx: "[ÁREA]" },
-  { text: "[DEPOIMENTO REAL DO GOOGLE]", author: "[NOME REAL]", ctx: "[ÁREA]" },
+  { text: "Os serviços do escritório são excelentes em especial os serviços do doutor Alexandre que além de saber muito tecnicamente se dispõe prontamente a tirar todas as dúvidas, não poderia recomendar mais!!!!", author: "João Victor", ctx: "Cível" },
+  { text: "Sou cliente do Dr Alexandre há quase 03 anos e sempre que preciso, realizo processos com escritório dele. Tenho total confiança de que realizam um excelente trabalho! Recomendo a todos os meus amigos que me pedem indicações.", author: "Rayza Oliveira", ctx: "Trabalhista" },
+  { text: "Excelente escritório me ajudou muito com um problema que estava com muita dor de cabeça, fico muito feliz pela competência dos funcionários, com certeza indicaria a todos", author: "Maria Eduarda Formágio Acquati", ctx: "Trabalhista" },
 ];
 
 function Testimonials() {
@@ -347,9 +463,11 @@ function Contato() {
         </a>
         <div className="contato__details">
           {[
-            { key: "E-MAIL",   val: "[CONTEÚDO REAL A INSERIR]" },
-            { key: "TELEFONE", val: "[CONTEÚDO REAL A INSERIR]" },
-            { key: "ENDEREÇO", val: "[CONTEÚDO REAL A INSERIR]" },
+            { key: "E-MAIL",   val: "marquesezechiello.advogados@outlook.com" },
+            { key: "CNPJ", val: "40.352.100/0001-00" },
+            { key: "TELEFONE", val: "(51) 99800-0405)" },
+            { key: "ENDEREÇO", val: "Av. Diário de Notícias, 200 - sala 205 - Cristal Tower - Cristal, Porto Alegre - RS" },
+            { val: "Avenida Almirante Barroso, 63, Sala 513, Centro, Rio de Janeiro, CEP 20.031-913" },
           ].map((d) => (
             <div key={d.key}>
               <span className="contato__detail-key">{d.key}</span>

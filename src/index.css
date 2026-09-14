@@ -681,3 +681,391 @@ body {
     padding: 80px 0;
   }
 }
+
+/* =========================================
+   HISTÓRIA — TIMELINE INTERATIVA
+========================================= */
+
+.historia-layout {
+   display: grid;
+
+  grid-template-columns:
+    minmax(340px, .85fr)
+    minmax(0, 1.15fr);
+
+  gap: 100px;
+
+  align-items: start;
+
+  margin-top: 80px;
+}
+
+
+/* COLUNA ESQUERDA */
+
+.historia-visual {
+  min-height: 100%;
+}
+
+.historia-visual__sticky {
+  position: sticky;
+  top: 110px;
+   align-self: start;
+}
+
+.historia-visual__small {
+  display: block;
+
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: .16em;
+
+  color: var(--gold);
+
+  margin-bottom: 28px;
+}
+
+.historia-visual__year {
+  font-family: var(--serif);
+  font-size: clamp(100px, 12vw, 180px);
+  line-height: .8;
+
+  color: var(--navy);
+
+  transition:
+    opacity .4s ease,
+    transform .4s ease;
+}
+
+.historia-visual__caption {
+  max-width: 320px;
+
+  margin-top: 40px;
+
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.7;
+
+  color: #778297;
+}
+
+
+/* TIMELINE */
+
+.historia-timeline {
+  border-top: 1px solid rgba(13, 35, 67, .15);
+}
+
+.historia-timeline .timeline-row {
+  opacity: .3;
+
+  transition:
+    opacity .45s ease,
+    transform .45s ease;
+
+  transform: translateX(0);
+}
+
+.historia-timeline .timeline-row--active {
+  opacity: 1;
+  transform: translateX(8px);
+}
+
+.historia-timeline .timeline-row--active .timeline-year {
+  color: var(--gold);
+}
+
+.historia-timeline .timeline-row--active .timeline-label {
+  color: var(--navy);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .historia-layout {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .historia-visual__sticky {
+    position: relative;
+    top: auto;
+  }
+
+  .historia-visual__year {
+    font-size: 100px;
+  }
+
+}
+
+/* =========================================
+   HISTÓRIA — MAPA + TIMELINE NO HOVER
+========================================= */
+
+
+/* ───────── LAYOUT ───────── */
+
+.historia-layout {
+  display: grid;
+  grid-template-columns: minmax(340px, 0.85fr) minmax(0, 1.15fr);
+
+  gap: 100px;
+
+  align-items: start;
+
+  margin-top: 80px;
+}
+
+
+/* ───────── COLUNA DO MAPA ───────── */
+
+.historia-visual {
+  width: 100%;
+  min-width: 0;
+}
+
+.historia-visual__sticky {
+  position: sticky;
+  top: 110px;
+
+  width: 100%;
+}
+
+
+/* ───────── MAPA ───────── */
+
+.historia-map {
+  position: relative;
+
+  width: 100%;
+  max-width: 470px;
+
+  margin: 0 auto;
+}
+
+.historia-map__image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  opacity: 0.55;
+
+  filter: grayscale(1) sepia(0.1);
+}
+
+
+/* ───────── PONTOS DO MAPA ───────── */
+
+.historia-map__point {
+  position: absolute;
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: var(--gold);
+
+  opacity: 0;
+
+  transform:
+    translate(-50%, -50%)
+    scale(0.7);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* RIO DE JANEIRO */
+
+.historia-map__point--rio {
+  left: 77%;
+  top: 73%;
+}
+
+
+/* SÃO PAULO */
+
+.historia-map__point--sp {
+  left: 66%;
+  top: 76%;
+}
+
+
+/* PORTO ALEGRE */
+
+.historia-map__point--poa {
+  left: 57%;
+  top: 89%;
+}
+
+
+/* ───────── PONTO ATIVO ───────── */
+
+.historia-map__point.active {
+  opacity: 1;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1);
+
+  box-shadow:
+    0 0 0 8px rgba(185, 141, 72, 0.15);
+}
+
+
+/* ───────── ANIMAÇÃO DO PONTO ───────── */
+
+.historia-map__pulse {
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 50%;
+
+  border: 1px solid var(--gold);
+
+  opacity: 0;
+}
+
+.historia-map__point.active .historia-map__pulse {
+  animation: historiaPulse 0.8s ease-out 1;
+}
+
+@keyframes historiaPulse {
+
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+
+}
+
+
+/* ───────── NOME DA CIDADE ───────── */
+
+.historia-map__city {
+  position: absolute;
+
+  left: 18px;
+  top: 50%;
+
+  white-space: nowrap;
+
+  transform:
+    translateY(-50%)
+    translateX(-4px);
+
+  opacity: 0;
+
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--navy);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.historia-map__point.active .historia-map__city {
+  opacity: 1;
+
+  transform:
+    translateY(-50%)
+    translateX(4px);
+}
+
+
+/* ───────── TIMELINE ───────── */
+
+.historia-timeline {
+  width: 100%;
+  min-width: 0;
+
+  border-top: 1px solid rgba(13, 35, 67, 0.15);
+}
+
+
+/* CADA ANO */
+
+.historia-timeline .timeline-row {
+  cursor: pointer;
+
+  opacity: 0.38;
+
+  transform: translateX(0);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+/* ANO ATIVO OU COM MOUSE EM CIMA */
+
+.historia-timeline .timeline-row:hover,
+.historia-timeline .timeline-row--active {
+  opacity: 1;
+
+  transform: translateX(8px);
+}
+
+
+/* ANO DOURADO */
+
+.historia-timeline .timeline-row:hover .timeline-year,
+.historia-timeline .timeline-row--active .timeline-year {
+  color: var(--gold);
+}
+
+
+/* TÍTULO DO ANO */
+
+.historia-timeline .timeline-row:hover .timeline-label,
+.historia-timeline .timeline-row--active .timeline-label {
+  color: var(--navy);
+}
+
+
+/* ───────── MOBILE ───────── */
+
+@media (max-width: 800px) {
+
+  .historia-layout {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+
+    margin-top: 55px;
+  }
+
+  .historia-visual__sticky {
+    position: relative;
+
+    top: auto;
+  }
+
+  .historia-map {
+    max-width: 390px;
+  }
+
+  .historia-timeline .timeline-row:hover,
+  .historia-timeline .timeline-row--active {
+    transform: translateX(0);
+  }
+
+}
