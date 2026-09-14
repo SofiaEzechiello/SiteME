@@ -111,13 +111,35 @@ function TeamIntro() {
 
 /* ─── ÁREAS ─── */
 const AREAS = [
-  { n: "01", title: "Direito Trabalhista" },
-  { n: "02", title: "Direito Previdenciário" },
-  { n: "03", title: "Direito Cível" },
-  { n: "04", title: "Direito Empresarial" },
+  {
+    n: "01",
+    title: "Direito Trabalhista",
+    desc: "Atuação especializada em Direito do Trabalho, com forte experiência no setor hospitalar e da saúde, unindo estratégia, técnica e acompanhamento próximo em demandas consultivas e contenciosas.",
+    path: "/areas-de-atuacao/trabalhista",
+  },
+  {
+    n: "02",
+    title: "Direito Previdenciário",
+    desc: "Atuação em demandas previdenciárias, com orientação técnica e análise individualizada de cada situação.",
+    path: "/areas-de-atuacao/previdenciario",
+  },
+  {
+    n: "03",
+    title: "Direito Cível",
+    desc: "Atuação em demandas cíveis, com foco em soluções seguras, responsáveis e adequadas à realidade de cada cliente.",
+    path: "/areas-de-atuacao/civil",
+  },
+  {
+    n: "04",
+    title: "Direito Empresarial",
+    desc: "Atuação em Direito Empresarial, com destaque para habilitação e acompanhamento de créditos em processos de recuperação judicial, além de assessoria estratégica a empresas e credores.",
+    path: "/areas-de-atuacao/empresarial",
+  },
 ];
 
 function Areas() {
+  const navigate = useNavigate();
+
   return (
     <section id="areas" className="areas">
       <div className="areas__inner">
@@ -129,10 +151,19 @@ function Areas() {
           </h2>
         </div>
         {AREAS.map((a) => (
-          <div key={a.n} className="area-row">
+          <div
+            key={a.n}
+            className="area-row"
+            onClick={() => navigate(a.path)}
+            role="link"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") navigate(a.path);
+            }}
+          >
             <span className="area-row__num">{a.n}</span>
             <h3 className="area-row__title">{a.title}</h3>
-            <p className="area-row__desc area-placeholder">[INSERIR DESCRIÇÃO REAL]</p>
+            <p className="area-row__desc">{a.desc}</p>
             <span className="area-row__arrow">↗</span>
           </div>
         ))}

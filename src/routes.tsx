@@ -2,6 +2,11 @@ import { createBrowserRouter } from "react-router";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import QuemSomos from "./pages/QuemSomos";
+import Trabalhista from "./pages/Trabalhista";
+import Previdenciario from "./pages/Previdenciario";
+import Civel from "./pages/Civel";
+import Empresarial from "./pages/Empresarial";
+
 
 export const router = createBrowserRouter([
   {
@@ -10,6 +15,9 @@ export const router = createBrowserRouter([
     children: [
       { index: true, Component: Home },
       { path: "quem-somos", Component: QuemSomos },
+      {path: "areas-de-atuacao/trabalhista",
+    Component: Trabalhista,
+  }
     ],
   },
 ]);

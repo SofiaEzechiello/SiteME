@@ -509,3 +509,175 @@ body {
   .time-home-row__name { font-size: 16px; }
   .time-sec__header { flex-direction: column; align-items: flex-start; gap: 20px; }
 }
+
+/* =========================================
+   PÁGINA — DIREITO TRABALHISTA
+========================================= */
+
+.trabalhista-hero {
+  background: var(--offwhite);
+  color: var(--navy);
+  padding: 150px 0 110px;
+}
+
+.trabalhista-hero__inner,
+.trabalhista-apresentacao__inner {
+  width: min(1240px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+.trabalhista-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.trabalhista-hero__grid {
+  display: grid;
+  grid-template-columns: 1.5fr .6fr;
+  gap: 80px;
+  align-items: end;
+  margin-top: 45px;
+}
+
+.trabalhista-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(80px, 10vw, 150px);
+  line-height: .82;
+  letter-spacing: -.035em;
+  font-weight: 400;
+}
+
+.trabalhista-title em {
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.trabalhista-hero__intro {
+  padding-bottom: 12px;
+}
+
+.trabalhista-hero__intro p {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #748096;
+  margin: 0 0 30px;
+}
+
+.trabalhista-hero__intro a {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: .13em;
+  text-decoration: none;
+  color: var(--navy);
+}
+
+
+/* APRESENTAÇÃO */
+
+.trabalhista-apresentacao {
+  background: #f7f5ef;
+  padding: 120px 0;
+  border-top: 1px solid rgba(13, 35, 67, .12);
+}
+
+.trabalhista-apresentacao__inner {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 100px;
+}
+
+.trabalhista-apresentacao__heading > span {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: .16em;
+  color: var(--gold);
+}
+
+.trabalhista-apresentacao__heading h2 {
+  margin: 28px 0 0;
+  font-family: var(--serif);
+  font-size: clamp(48px, 5vw, 76px);
+  font-weight: 400;
+  line-height: .95;
+  color: var(--navy);
+}
+
+.trabalhista-apresentacao__heading h2 em {
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.trabalhista-apresentacao__texto {
+  max-width: 700px;
+}
+
+.trabalhista-apresentacao__texto p {
+  text-align: justify;
+  text-justify: inter-word;
+  margin: 0 0 26px;
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.85;
+  color: #67758a;
+}
+
+
+/* SELO */
+
+.trabalhista-selo {
+  width: 100%;
+  overflow: hidden;
+  background: var(--navy);
+}
+
+.trabalhista-selo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.trabalhista-apresentacao__selo {
+  display: block;
+
+  width: min(100%, 390px);
+  max-width: 295px;
+  height: auto;
+
+  margin-top: 55px;
+  margin-left: 35px;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .trabalhista-hero {
+    padding: 120px 0 80px;
+  }
+
+  .trabalhista-hero__inner,
+  .trabalhista-apresentacao__inner {
+    width: calc(100% - 40px);
+  }
+
+  .trabalhista-hero__grid,
+  .trabalhista-apresentacao__inner {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .trabalhista-title {
+    font-size: clamp(64px, 20vw, 100px);
+  }
+
+  .trabalhista-apresentacao {
+    padding: 80px 0;
+  }
+}
