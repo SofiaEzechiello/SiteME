@@ -458,7 +458,7 @@ function Contato() {
         <p className="contato__text">
           Nossa equipe está pronta para atendê-lo com atenção, clareza e comprometimento. Entre em contato e agende uma consulta.
         </p>
-        <a href="mailto:[CONTEÚDO REAL A INSERIR]" className="contato__btn">
+        <a href="mailto:marquesezechiello.advogados@outlook.com" className="contato__btn">
           ENTRE EM CONTATO ↗
         </a>
         <div className="contato__details">
