@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Outlet, NavLink, useNavigate, useLocation } from "react-router";
-import logoImg from "@/imports/LOGO EMBAIXO.png";
+import logoImg from "@/imports/logo-embaixo.png";
 
 const NAV_LINKS = [
   { label: "Início",             to: "/" },
