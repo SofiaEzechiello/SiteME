@@ -2,7 +2,7 @@
 
 Website institucional do **Marques Ezechiello Advogados Associados**, desenvolvido em React com foco em uma experiência moderna, responsiva e alinhada à identidade visual do escritório.
 
-🌐 **Site:** https://marquesezechiello.com.br
+**Site:** https://marquesezechiello.com.br
 
 ---
 
