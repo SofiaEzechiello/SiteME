@@ -13,7 +13,7 @@ export default function QuemSomos() {
         img={alexandreImg}
         name="Alexandre Ezechiello"
         role="Sócio & Co-founder"
-        oab="OAB/RJ 143.732"
+        oab={"OAB/RJ 143.732\nOAB/RS 95.616 A"}
         bio="Especialista em Direito do Trabalho e formado em Administração pela UFRJ, possui mais de 20 anos de experiência na advocacia, tendo atuado como Procurador Jurídico de uma das maiores emprsas de energia no Brasil. Desenvolveu sólida trajetória na representação de clientes em demandas trabalhistas e cíveis, com destaque para profissionais da área hospitalar e da saúde, além de atuação consultiva em Direito Previdenciário. É associado ao IARGS e ao IBDP."
         formation="Direito | Administração (UFRJ) | Especialização em Direito Previdenciário (PUCRS) | Mestrando em Direito da Empresa e dos Negócios (Unisinos)"
         areas={["Trabalhista, Previdenciário, Cível e Empresarial"]}
@@ -24,7 +24,7 @@ export default function QuemSomos() {
         img={soniaImg}
         name="Sonia M. M. E. Ezechiello"
         role="Sócia & Founder"
-        oab="[OAB REAL A INSERIR]"
+        oab={"OAB/RJ 158.933\nOAB/RS 119.119 A"}
         bio="Fundadora do escritório e sócia-administradora, é formada em Direito, com atuação nas áreas Trabalhista e Cível. Possui experiência na condução de demandas judiciais, atendimento estratégico a clientes e organização administrativa de escritórios de advocacia. Atua na coordenação das atividades jurídicas e administrativas, aliando técnica jurídica, gestão financeira e eficiência na condução do negócio."
         formation="Direito | Pós-graduação Tax Law (PUCRS)"
         areas={["Trabalhista, Cível e Tributária"]}
@@ -35,7 +35,7 @@ export default function QuemSomos() {
         img={rafaelaImg}
         name="Rafaela M. Ezechiello"
         role="Advogada"
-        oab="[OAB REAL A INSERIR]"
+        oab="OAB/RS 138.525"
         bio="Formada em Direito pela PUC-RS e pós-graduanda em Processo e Direito do Trabalho, possui experiência em responsabilidade civil e Direito Internacional Privado do Trabalho. Atua na representação de clientes e na consultoria em Direito Trabalhista, além de integrar a gestão estratégica do escritório, contribuindo para a organização administrativa, o planejamento e o desenvolvimento institucional."
         formation="Direito (PUCRS) | Pós-graduação em Processo e Direito do Trabalho (PUCRS)"
         areas={["Trabalhista, Cível e Internacional Privado"]}

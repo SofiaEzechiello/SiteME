@@ -1,48 +1,99 @@
-export default function Trabalhista() {
+export default function Empresarial() {
   return (
-    <section
-      style={{
-        minHeight: "100vh",
-        padding: "150px 7vw",
-        background: "var(--offwhite)",
-        color: "var(--navy)",
-      }}
-    >
-      <p
-        style={{
-          fontSize: 11,
-          letterSpacing: ".14em",
-          fontFamily: "var(--sans)",
-        }}
-      >
-        ÁREAS DE ATUAÇÃO / DIREITO TRABALHISTA
-      </p>
+    <>
+      {/* HERO */}
+      <section className="trabalhista-hero">
+        <div className="trabalhista-hero__inner">
 
-      <h1
-        style={{
-          fontFamily: "var(--serif)",
-          fontSize: "clamp(70px, 9vw, 140px)",
-          fontWeight: 400,
-          lineHeight: ".9",
-          marginTop: 30,
-        }}
-      >
-        Direito
-        <br />
-        Trabalhista.
-      </h1>
+          <span className="trabalhista-label">
+            ÁREAS DE ATUAÇÃO / DIREITO EMPRESARIAL
+          </span>
 
-      <p
-        style={{
-          maxWidth: 650,
-          fontSize: 18,
-          lineHeight: 1.7,
-          marginTop: 50,
-        }}
+          <div className="trabalhista-hero__grid">
+
+            <h1 className="trabalhista-title">
+              Direito
+              <br />
+              <em>Empresarial.</em>
+            </h1>
+
+            <div className="trabalhista-hero__intro">
+              <p>
+                Atuação estratégica na defesa de empresas e credores,
+                com especial experiência em habilitação de créditos
+                e acompanhamento de processos de recuperação judicial
+                e falência.
+              </p>
+
+              <a href="#atuacao-empresarial">
+                CONHEÇA NOSSA ATUAÇÃO →
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      {/* APRESENTAÇÃO */}
+      <section
+        className="trabalhista-apresentacao"
+        id="atuacao-empresarial"
       >
-        Atuação especializada em Direito do Trabalho, com forte experiência
-        no setor hospitalar e da saúde.
-      </p>
-    </section>
+        <div className="trabalhista-apresentacao__inner">
+
+          {/* COLUNA ESQUERDA */}
+          <div className="trabalhista-apresentacao__heading">
+
+            <span>
+              ATUAÇÃO EMPRESARIAL
+            </span>
+
+            <h2>
+              Estratégia jurídica.
+              <br />
+              Proteção de <em>interesses.</em>
+            </h2>
+
+          </div>
+
+
+          {/* COLUNA DIREITA */}
+          <div className="trabalhista-apresentacao__texto">
+
+            <p>
+              Atuamos na área empresarial prestando assessoria e defesa
+              dos interesses de empresas, credores e pessoas envolvidas
+              em relações comerciais e patrimoniais.
+            </p>
+
+            <p>
+              Possuímos especial atuação em habilitações e divergências
+              de crédito, bem como no acompanhamento de credores em
+              processos de recuperação judicial e falência, buscando
+              o correto reconhecimento dos valores devidos, a adequada
+              classificação do crédito e a proteção dos interesses do
+              credor ao longo do procedimento.
+            </p>
+
+            <p>
+              Nossa atuação também compreende recuperação de créditos,
+              cobranças, contratos empresariais, responsabilidade
+              patrimonial e outras questões relacionadas à atividade
+              empresarial.
+            </p>
+
+            <p>
+              Cada demanda é conduzida a partir da análise cuidadosa
+              da documentação, dos contratos, dos valores envolvidos
+              e dos riscos jurídicos, buscando oferecer uma atuação
+              técnica, segura e estratégica.
+            </p>
+
+          </div>
+
+        </div>
+      </section>
+    </>
   );
 }

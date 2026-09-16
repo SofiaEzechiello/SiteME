@@ -1,48 +1,91 @@
-export default function Trabalhista() {
+export default function Previdenciario() {
   return (
-    <section
-      style={{
-        minHeight: "100vh",
-        padding: "150px 7vw",
-        background: "var(--offwhite)",
-        color: "var(--navy)",
-      }}
-    >
-      <p
-        style={{
-          fontSize: 11,
-          letterSpacing: ".14em",
-          fontFamily: "var(--sans)",
-        }}
-      >
-        ÁREAS DE ATUAÇÃO / DIREITO TRABALHISTA
-      </p>
+    <>
+      {/* HERO */}
+      <section className="trabalhista-hero">
+        <div className="trabalhista-hero__inner">
 
-      <h1
-        style={{
-          fontFamily: "var(--serif)",
-          fontSize: "clamp(70px, 9vw, 140px)",
-          fontWeight: 400,
-          lineHeight: ".9",
-          marginTop: 30,
-        }}
-      >
-        Direito
-        <br />
-        Trabalhista.
-      </h1>
+          <span className="trabalhista-label">
+            ÁREAS DE ATUAÇÃO / DIREITO PREVIDENCIÁRIO
+          </span>
 
-      <p
-        style={{
-          maxWidth: 650,
-          fontSize: 18,
-          lineHeight: 1.7,
-          marginTop: 50,
-        }}
+          <div className="trabalhista-hero__grid">
+
+            <h1 className="trabalhista-title">
+              Direito
+              <br />
+              <em>Previdenciário.</em>
+            </h1>
+
+            <div className="trabalhista-hero__intro">
+              <p>
+                Atuação especializada em Direito Previdenciário, com
+                orientação técnica, análise individualizada e acompanhamento
+                próximo em demandas administrativas e judiciais perante o INSS.
+              </p>
+
+              <a href="#atuacao-previdenciaria">
+                CONHEÇA NOSSA ATUAÇÃO →
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      {/* APRESENTAÇÃO */}
+      <section
+        className="trabalhista-apresentacao"
+        id="atuacao-previdenciaria"
       >
-        Atuação especializada em Direito do Trabalho, com forte experiência
-        no setor hospitalar e da saúde.
-      </p>
-    </section>
+        <div className="trabalhista-apresentacao__inner">
+
+          {/* COLUNA ESQUERDA */}
+          <div className="trabalhista-apresentacao__heading">
+
+            <span>
+              ATUAÇÃO PREVIDENCIÁRIA
+            </span>
+
+            <h2>
+              Orientação técnica.
+              <br />
+              Proteção dos seus <em>direitos.</em>
+            </h2>
+
+          </div>
+
+
+          {/* COLUNA DIREITA */}
+          <div className="trabalhista-apresentacao__texto">
+
+            <p>
+              Nossa atuação abrange aposentadorias, pensão por morte,
+              benefícios por incapacidade temporária ou permanente,
+              auxílio-acidente, salário-maternidade, BPC/LOAS, revisões
+              de benefícios, restabelecimentos e demais demandas
+              relacionadas à Previdência Social.
+            </p>
+
+            <p>
+              Cada caso é analisado de forma cuidadosa, considerando
+              a documentação disponível, o histórico contributivo e
+              as particularidades da situação do segurado, buscando
+              identificar a estratégia mais adequada para a concessão,
+              revisão ou restabelecimento do benefício.
+            </p>
+
+            <p>
+              Nosso objetivo é oferecer orientação clara, acompanhamento
+              próximo e uma atuação comprometida com a efetiva proteção
+              dos direitos previdenciários.
+            </p>
+
+          </div>
+
+        </div>
+      </section>
+    </>
   );
 }

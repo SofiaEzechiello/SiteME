@@ -465,7 +465,7 @@ function Contato() {
           {[
             { key: "E-MAIL",   val: "marquesezechiello.advogados@outlook.com" },
             { key: "CNPJ", val: "40.352.100/0001-00" },
-            { key: "TELEFONE", val: "(51) 99800-0405)" },
+            { key: "INSTAGRAM", val: "@marquesezechiello" },
             { key: "ENDEREÇO", val: "Av. Diário de Notícias, 200 - sala 205 - Cristal Tower - Cristal, Porto Alegre - RS" },
             { val: "Avenida Almirante Barroso, 63, Sala 513, Centro, Rio de Janeiro, CEP 20.031-913" },
           ].map((d) => (

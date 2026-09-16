@@ -207,7 +207,6 @@ body {
 .diferencial__label { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: .2em; color: rgba(13,35,67,.5); display: block; margin-bottom: 28px; }
 .diferencial__title { font-family: var(--serif); font-size: clamp(28px,3.5vw,48px); font-weight: 400; color: var(--navy); margin: 0; line-height: 1.08; letter-spacing: -.025em; }
 .diferencial__title em { font-style: italic; }
-.diferencial__divider { background: rgba(13,35,67,.14); width: 1px; align-self: stretch; min-height: 200px; }
 .diferencial__items { position: relative; padding-left: 36px; }
 .diferencial__line { position: absolute; left: 8px; top: 6px; bottom: 6px; width: 1px; background: rgba(13,35,67,.14); }
 .diferencial__item { position: relative; margin-bottom: 44px; }
@@ -424,7 +423,7 @@ body {
 .qs-profile__photo { height: 520px; overflow: hidden; background: #C8C3B8; }
 .qs-profile__photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
 .qs-profile__photo-caption { margin-top: 14px; }
-.qs-profile__oab { font-family: var(--sans); font-size: 10px; letter-spacing: .14em; color: var(--muted); }
+.qs-profile__oab { font-family: var(--sans); font-size: 10px; letter-spacing: .14em; color: var(--muted);white-space: pre-line; }
 .qs-profile__name { font-family: var(--serif); font-size: clamp(28px,3vw,44px); font-weight: 400; color: var(--navy); margin: 16px 0 8px; letter-spacing: -.02em; line-height: 1.1; }
 .qs-profile__role { font-family: var(--sans); font-size: 10px; font-weight: 600; letter-spacing: .18em; color: var(--gold); }
 .qs-profile__rule { height: 1px; background: rgba(13,35,67,.1); margin: 32px 0; }
